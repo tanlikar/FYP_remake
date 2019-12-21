@@ -1,6 +1,7 @@
 package com.example.fyp;
 
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.InputType;
 import android.view.Menu;
@@ -17,6 +18,7 @@ import androidx.appcompat.widget.Toolbar;
 
 import com.example.fyp.Storage.AppPreferences;
 import com.example.fyp.Storage.PrefKey;
+import com.example.fyp.viewAdapter.CustomAdapter;
 
 import java.util.ArrayList;
 
@@ -50,7 +52,9 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
         mGridView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Toast.makeText(MainActivity.this, "You Clicked at " +mRoomName.get(i), Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(MainActivity.this, display.class);
+                startActivity(intent);
+                //Toast.makeText(MainActivity.this, "You Clicked at " +mRoomName.get(i), Toast.LENGTH_SHORT).show();
             }
         });
 
@@ -92,7 +96,7 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
                 public void onClick(DialogInterface dialog, int which) {
                     mInput = input.getText().toString();
                     mRoomName.add(mInput);
-                    imageId.add(R.drawable.ic_living_room_595b40b75ba036ed117d806a);
+                    imageId.add(R.drawable.icon_room);
                     CustomAdapter adapter = new CustomAdapter(MainActivity.this, mRoomName, imageId);
                     mGridView.setAdapter(adapter);
                     mPref.putListString(roomKey, mRoomName);
