@@ -6,8 +6,13 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
-import com.example.fyp.ui.fragment.fragOne;
-import com.example.fyp.ui.fragment.fragTwo;
+import com.example.fyp.ui.fragment.fragCO2;
+import com.example.fyp.ui.fragment.fragControl;
+import com.example.fyp.ui.fragment.fragHumi;
+import com.example.fyp.ui.fragment.fragPM10;
+import com.example.fyp.ui.fragment.fragPM25;
+import com.example.fyp.ui.fragment.fragTemp;
+import com.example.fyp.ui.fragment.fragVOC;
 import com.example.fyp.viewAdapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
@@ -42,13 +47,23 @@ public class display extends AppCompatActivity {
     private void setupTabIcons(){
         tabs.getTabAt(0).setIcon(tabIcons[0]);
         tabs.getTabAt(1).setIcon(tabIcons[1]);
+        tabs.getTabAt(2).setIcon(tabIcons[2]);
+        tabs.getTabAt(3).setIcon(tabIcons[3]);
+        tabs.getTabAt(4).setIcon(tabIcons[4]);
+        tabs.getTabAt(5).setIcon(tabIcons[5]);
+        tabs.getTabAt(6).setIcon(tabIcons[6]);
 
     }
 
     private void setupViewPager(ViewPager viewPager) {
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new fragOne(), "Control");
-        adapter.addFragment(new fragTwo(), "Temp");
+        adapter.addFragment(new fragControl(), "Control");
+        adapter.addFragment(new fragTemp(), "Temp");
+        adapter.addFragment(new fragHumi(), "Humi");
+        adapter.addFragment(new fragCO2(), "CO2");
+        adapter.addFragment(new fragPM10(), "PM10");
+        adapter.addFragment(new fragPM25(), "PM2.5");
+        adapter.addFragment(new fragVOC(), "VOC");
 
         viewPager.setAdapter(adapter);
     }

@@ -1,0 +1,85 @@
+{
+  "project_info": {
+    "project_number": "541214631561",
+    "firebase_url": "https://iot-with-firebase.firebaseio.com",
+    "project_id": "iot-with-firebase",
+    "storage_bucket": "iot-with-firebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541214631561:android:297330312ee7b6df380858",
+        "android_client_info": {
+          "package_name": "com.example.fyp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541214631561-8kp2imt4q5c4jie2clk26lcsili78obs.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.fyp",
+            "certificate_hash": "9abf5cf54501672d218c093afcb18f1f8bf9fc45"
+          }
+        },
+        {
+          "client_id": "541214631561-hukrmprkuep6omottli2f5m0u8qtiur5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADRorRAma3YDTduSYafQMpP6hLEfBjlac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541214631561-hukrmprkuep6omottli2f5m0u8qtiur5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:541214631561:android:7dd48c288a2e16b6",
+        "android_client_info": {
+          "package_name": "com.tan.iotwfirebase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "541214631561-8p2v0brv6n764v7qok75alvr7l5fd3rq.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.tan.iotwfirebase",
+            "certificate_hash": "d1fbada224fa731304014601b7506c3cd7fcff64"
+          }
+        },
+        {
+          "client_id": "541214631561-hukrmprkuep6omottli2f5m0u8qtiur5.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyADRorRAma3YDTduSYafQMpP6hLEfBjlac"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "541214631561-hukrmprkuep6omottli2f5m0u8qtiur5.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

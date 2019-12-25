@@ -13,9 +13,9 @@ import com.example.fyp.R;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class fragTwo extends Fragment {
+public class fragHumi extends Fragment {
 
-    public fragTwo() {
+    public fragHumi() {
         // Required empty public constructor
     }
 
@@ -28,9 +28,9 @@ public class fragTwo extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        View root = inflater.inflate(R.layout.fragment_one, container, false);
+        View root = inflater.inflate(R.layout.fragment_humi, container, false);
         TextView mText = root.findViewById(R.id.section_label);
-        mText.setText("Two");
+        mText.setText("humi");
 
         return root;
     }

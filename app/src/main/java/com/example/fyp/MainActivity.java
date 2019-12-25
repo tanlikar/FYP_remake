@@ -41,7 +41,10 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
 
         try{
             mRoomName = mPref.getListString(roomKey);
-            imageId = mPref.getListInt(imageKey);
+
+            for(int x = 0; x<mRoomName.size(); x++){
+                imageId.add(R.drawable.icon_room);
+            };
 
         }catch (Exception ignored){
         }
@@ -100,7 +103,6 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
                     CustomAdapter adapter = new CustomAdapter(MainActivity.this, mRoomName, imageId);
                     mGridView.setAdapter(adapter);
                     mPref.putListString(roomKey, mRoomName);
-                    mPref.putListInt(imageKey, imageId);
 
                 }
             });
