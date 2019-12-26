@@ -4,4 +4,6 @@ public interface PrefKey {
 
     String roomKey = "roomKey";
     String imageKey = "imageKey";
+    String bundleRoom = "room";
+    String bundlePosition = "position";
 }

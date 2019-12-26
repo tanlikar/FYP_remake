@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.viewpager.widget.ViewPager;
 
+import com.example.fyp.Storage.PrefKey;
 import com.example.fyp.ui.fragment.fragCO2;
 import com.example.fyp.ui.fragment.fragControl;
 import com.example.fyp.ui.fragment.fragHumi;
@@ -16,7 +17,7 @@ import com.example.fyp.ui.fragment.fragVOC;
 import com.example.fyp.viewAdapter.ViewPagerAdapter;
 import com.google.android.material.tabs.TabLayout;
 
-public class display extends AppCompatActivity {
+public class display extends AppCompatActivity implements PrefKey {
 
     private TabLayout tabs;
     private int[] tabIcons = {
@@ -29,12 +30,22 @@ public class display extends AppCompatActivity {
             R.drawable.icon_voc
     };
 
+    private String roomName;
+    private Integer position;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
+         roomName = getIntent().getStringExtra(bundleRoom);
+         position = getIntent().getIntExtra(bundlePosition, 0);
+
+//        Toast toast = Toast.makeText( display.this, position.toString(), Toast.LENGTH_SHORT);
+//        toast.show();
+
         Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle(roomName);
         setSupportActionBar(toolbar);
         ViewPager viewPager = findViewById(R.id.view_pager);
         setupViewPager(viewPager);

@@ -5,7 +5,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageButton;
-import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
@@ -38,16 +37,22 @@ public class fragControl extends Fragment {
         mTherButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(getActivity(), "ther", Toast.LENGTH_SHORT);
-                toast.show();
+//                Toast toast = Toast.makeText(getActivity(), "ther", Toast.LENGTH_SHORT);
+//                toast.show();
+                Fragment childFragment = new fragControlTemp();
+                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                transaction.replace(R.id.childFragContainer, childFragment).commit();
             }
         });
 
         mFanButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Toast toast = Toast.makeText(getActivity(), "fan", Toast.LENGTH_SHORT);
-                toast.show();
+                Fragment childFragment = new fragControlFan();
+                FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
+                transaction.replace(R.id.childFragContainer, childFragment).commit();
+//                Toast toast = Toast.makeText(getActivity(), "fan", Toast.LENGTH_SHORT);
+//                toast.show();
             }
         });
 
@@ -57,7 +62,7 @@ public class fragControl extends Fragment {
 
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
-        Fragment childFragment = new fragControlChild();
+        Fragment childFragment = new fragControlTemp();
         FragmentTransaction transaction = getChildFragmentManager().beginTransaction();
         transaction.replace(R.id.childFragContainer, childFragment).commit();
     }

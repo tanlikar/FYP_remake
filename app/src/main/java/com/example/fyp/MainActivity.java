@@ -56,6 +56,8 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, display.class);
+                intent.putExtra(bundleRoom, mRoomName.get(i));
+                intent.putExtra(bundlePosition, i);
                 startActivity(intent);
                 //Toast.makeText(MainActivity.this, "You Clicked at " +mRoomName.get(i), Toast.LENGTH_SHORT).show();
             }
