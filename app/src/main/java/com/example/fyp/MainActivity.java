@@ -40,7 +40,7 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
         mPref = new AppPreferences(this);
 
         try{
-            mRoomName = mPref.getListString(roomKey);
+            mRoomName = mPref.getListString(ROOM_KEY);
 
             for(int x = 0; x<mRoomName.size(); x++){
                 imageId.add(R.drawable.icon_room);
@@ -56,8 +56,8 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Intent intent = new Intent(MainActivity.this, display.class);
-                intent.putExtra(bundleRoom, mRoomName.get(i));
-                intent.putExtra(bundlePosition, i);
+                intent.putExtra(BUNDLE_ROOM, mRoomName.get(i));
+                intent.putExtra(BUNDLE_POSITION, i);
                 startActivity(intent);
                 //Toast.makeText(MainActivity.this, "You Clicked at " +mRoomName.get(i), Toast.LENGTH_SHORT).show();
             }
@@ -104,7 +104,7 @@ public class MainActivity extends AppCompatActivity implements PrefKey {
                     imageId.add(R.drawable.icon_room);
                     CustomAdapter adapter = new CustomAdapter(MainActivity.this, mRoomName, imageId);
                     mGridView.setAdapter(adapter);
-                    mPref.putListString(roomKey, mRoomName);
+                    mPref.putListString(ROOM_KEY, mRoomName);
 
                 }
             });

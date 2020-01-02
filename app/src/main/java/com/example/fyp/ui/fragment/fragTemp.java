@@ -13,6 +13,7 @@ import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 
 import com.example.fyp.R;
+import com.example.fyp.Storage.PrefKey;
 import com.example.fyp.helper.MyMarkerView;
 import com.example.fyp.helper.generalData;
 import com.github.mikephil.charting.charts.LineChart;
@@ -39,14 +40,18 @@ import java.util.Locale;
 /**
  * A placeholder fragment containing a simple view.
  */
-public class fragTemp extends Fragment {
+public class fragTemp extends Fragment implements PrefKey {
 
     private LineChart chart;
+    private TextView mDataText;
+    private TextView mSymbolText;
+    private TextView mDespText;
     private DatabaseReference mDatabaseReference;
     private generalData data = new generalData();
     private ArrayList<generalData> mGeneralData =new ArrayList<>();
     private XAxis xAxis;
     private Long referenceTimestamp;
+    String tabsPosition;
 
     public fragTemp() {
         // Required empty public constructor
@@ -60,12 +65,14 @@ public class fragTemp extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         // Inflate the layout for this fragment
         View root = inflater.inflate(R.layout.fragment_temp, container, false);
-        TextView mText = root.findViewById(R.id.section_label);
-        mText.setText("TEMP");
 
         chart = root.findViewById(R.id.chart1);
+        mDataText = root.findViewById(R.id.dataText);
+        mDespText = root.findViewById(R.id.despText);
+        mSymbolText = root.findViewById(R.id.symbolText);
 
         // no description text
         chart.getDescription().setEnabled(false);
@@ -86,11 +93,12 @@ public class fragTemp extends Fragment {
 
         // get the legend (only possible after setting data)
         Legend l = chart.getLegend();
-        l.setEnabled(false);
+        l.setEnabled(true);
 
         xAxis = chart.getXAxis();
-        xAxis.setPosition(XAxis.XAxisPosition.TOP_INSIDE);
+        xAxis.setPosition(XAxis.XAxisPosition.TOP);
         xAxis.setTextSize(10f);
+        xAxis.setTextColor(ColorTemplate.getHoloBlue());
         xAxis.setDrawAxisLine(false);
         xAxis.setDrawGridLines(true);
         xAxis.setCenterAxisLabels(true);
@@ -99,8 +107,8 @@ public class fragTemp extends Fragment {
         leftAxis.setPosition(YAxis.YAxisLabelPosition.OUTSIDE_CHART);
         leftAxis.setTextColor(ColorTemplate.getHoloBlue());
         leftAxis.setDrawGridLines(true);
-        leftAxis.setYOffset(-9f);
-        leftAxis.setTextColor(Color.rgb(255, 192, 56));
+        //leftAxis.setYOffset(-9f);
+        //leftAxis.setTextColor(Color.rgb(255, 192, 56));
 
         YAxis rightAxis = chart.getAxisRight();
         rightAxis.setEnabled(false);
@@ -172,7 +180,6 @@ public class fragTemp extends Fragment {
 
             }
         });
-
 
         return root;
     }

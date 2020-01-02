@@ -2,8 +2,9 @@ package com.example.fyp.Storage;
 
 public interface PrefKey {
 
-    String roomKey = "roomKey";
-    String imageKey = "imageKey";
-    String bundleRoom = "room";
-    String bundlePosition = "position";
+    String ROOM_KEY = "ROOM_KEY";
+    String IMAGE_KEY = "imageKey";
+    String BUNDLE_ROOM = "room";
+    String BUNDLE_POSITION = "position";
+    String TAB_POSITION = "sensor";
 }

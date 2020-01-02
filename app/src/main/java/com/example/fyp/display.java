@@ -32,14 +32,15 @@ public class display extends AppCompatActivity implements PrefKey {
 
     private String roomName;
     private Integer position;
+    private String myString;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_display);
 
-         roomName = getIntent().getStringExtra(bundleRoom);
-         position = getIntent().getIntExtra(bundlePosition, 0);
+         roomName = getIntent().getStringExtra(BUNDLE_ROOM);
+         position = getIntent().getIntExtra(BUNDLE_POSITION, 0);
 
 //        Toast toast = Toast.makeText( display.this, position.toString(), Toast.LENGTH_SHORT);
 //        toast.show();
@@ -78,4 +79,5 @@ public class display extends AppCompatActivity implements PrefKey {
 
         viewPager.setAdapter(adapter);
     }
+
 }
